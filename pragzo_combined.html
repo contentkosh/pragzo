@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PragZo - Your Smart Path to CUET Success (Combined)</title> <!-- Updated Title -->
+
+    <!-- Font Awesome CDN for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Link to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- ======================= -->
+    <!-- == START: CSS STYLES == -->
+    <!-- ======================= -->
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Variables */
+        :root {
+            --primary-color: #4A90E2; /* Blue */
+            --secondary-color: #50E3C2; /* Teal */
+            --accent-color: #F5A623; /* Orange for emphasis */
+            --text-color: #333;
+            --light-gray: #f4f7f6;
+            --white: #ffffff;
+            --heading-font: 'Poppins', sans-serif;
+            --body-font: 'Roboto', sans-serif;
+            --card-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            --card-hover-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Basic Styles */
+        body {
+            font-family: var(--body-font);
+            line-height: 1.7;
+            color: var(--text-color);
+            background-color: var(--white);
+        }
+
+        html {
+           scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            overflow: visible; /* Allow dropdown overflow */
+            padding: 0 25px;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--heading-font);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        h1 { font-size: 2.8rem; line-height: 1.2; }
+        h2 { font-size: 2.2rem; text-align: center; margin-bottom: 3rem; color: var(--primary-color); }
+        h3 { font-size: 1.4rem; font-weight: 500; }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: var(--white);
+            color: var(--text-color);
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative; /* Needed for dropdown positioning context */
+        }
+
+        header .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            font-family: var(--heading-font);
+        }
+        header .logo span {
+            color: var(--secondary-color);
+        }
+
+        header nav ul {
+            display: flex;
+            align-items: center;
+        }
+
+        header nav ul li {
+            margin-left: 25px;
+            position: relative; /* For dropdown positioning */
+        }
+
+        header nav ul li a {
+            color: var(--text-color);
+            padding: 8px 12px;
+            font-weight: 500;
+            border-radius: 4px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            display: block; /* Ensure link takes full li space */
+        }
+
+        header nav ul li a:hover,
+        header nav ul li a.active {
+            color: var(--primary-color);
+            background-color: rgba(74, 144, 226, 0.1);
+        }
+        .nav-button {
+            background-color: var(--primary-color);
+            color: var(--white) !important;
+            padding: 8px 18px !important;
+            border-radius: 20px;
+            font-weight: 500;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .nav-button:hover {
+            background-color: #357ABD;
+            transform: translateY(-2px);
+            color: var(--white) !important;
+            background-color: #357ABD !important;
+        }
+
+        /* Dropdown Menu Styles */
+        .dropdown-menu {
+            display: none; /* Hidden by default */
+            position: absolute;
+            left: 0;
+            top: 100%; /* Position below the parent li */
+            background-color: var(--white);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            min-width: 200px; /* Minimum width */
+            z-index: 1001; /* Above other content */
+            padding: 0.5rem 0; /* Padding top/bottom */
+        }
+        .dropdown-menu hr {
+            margin: 5px 15px;
+            border: 0;
+            border-top: 1px solid #eee;
+        }
+        .dropdown-menu li {
+            margin-left: 0; /* Reset margin */
+        }
+        .dropdown-menu li a {
+            padding: 10px 20px; /* Padding for dropdown items */
+            color: var(--text-color);
+            font-weight: 400; /* Normal weight */
+            white-space: nowrap; /* Prevent wrapping */
+            border-radius: 0; /* No radius for individual items */
+        }
+        .dropdown-menu li a:hover {
+            background-color: var(--light-gray);
+            color: var(--primary-color);
+        }
+        /* Show dropdown on hover */
+        li.dropdown:hover > .dropdown-menu {
+            display: block;
+        }
+        /* Style the dropdown toggle link */
+        li.dropdown > a::after { /* Optional: Add down arrow */
+            content: ' \f078'; /* Font Awesome down arrow */
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            font-size: 0.7em;
+            margin-left: 5px;
+        }
+
+
+        /* Hero Section */
+        #hero {
+            /* Consider adding a background image using CSS */
+            background: linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)), url('https://via.placeholder.com/1600x700/e0f2f7/888888?text=CUET+Exam+Deep+Dive') no-repeat center center/cover; /* Replace placeholder */
+            background-size: cover;
+            background-position: center center;
+            color: var(--text-color);
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 4rem 20px;
+        }
+        #hero h1 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            max-width: 800px;
+        }
+        #hero h1 span {
+            color: var(--secondary-color);
+        }
+        #hero p.subtitle {
+            font-size: 1.25rem;
+            max-width: 750px;
+            margin-bottom: 2.5rem;
+            color: #555;
+        }
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-color);
+            color: var(--white);
+            padding: 15px 35px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(245, 166, 35, 0.4);
+        }
+        .cta-button:hover {
+            background-color: #e0981f;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(245, 166, 35, 0.5);
+        }
+
+        /* CUET Features Section */
+        #cuet-features {
+            padding: 5rem 0;
+            background: var(--light-gray);
+        }
+        #cuet-features h2 {
+            margin-bottom: 3.5rem;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+        .feature-card {
+            background: var(--white);
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--card-hover-shadow);
+        }
+        .feature-card .icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            width: 70px;
+            height: 70px;
+            background-color: rgba(74, 144, 226, 0.1);
+            border-radius: 50%;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .feature-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+        .feature-card p {
+            font-size: 0.92rem;
+            color: #555;
+            flex-grow: 1;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            text-align: left;
+            padding: 0 0.5rem;
+        }
+        .feature-card a.download-link {
+            color: var(--accent-color);
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            margin-top: auto;
+            align-self: center;
+        }
+        .feature-card a.download-link:hover {
+            text-decoration: underline;
+            color: #e0981f;
+        }
+
+        /* Blog Preview Section */
+        #blog-preview {
+            padding: 5rem 0;
+        }
+        #blog-preview h2 {
+            margin-bottom: 3rem;
+        }
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .blog-post-preview {
+            border: 1px solid #eee;
+            border-radius: 10px;
+            overflow: hidden;
+            background: var(--white);
+            box-shadow: var(--card-shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-post-preview:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--card-hover-shadow);
+        }
+        .blog-post-preview img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        .blog-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .blog-content h3 {
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+        .blog-content p {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 1rem;
+            flex-grow: 1;
+        }
+        .read-more-link {
+            color: var(--primary-color);
+            font-weight: bold;
+            align-self: flex-start;
+        }
+        .read-more-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-color);
+            color: var(--light-gray);
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        footer p {
+            margin-bottom: 1rem;
+        }
+        footer a {
+            color: var(--secondary-color);
+            margin: 0 10px;
+        }
+        footer a:hover {
+            color: var(--white);
+        }
+        /* Social Media Styles */
+        .social-media {
+            margin-top: 1rem; /* Space above icons */
+            margin-bottom: 1rem; /* Space below icons */
+        }
+        .social-media a {
+            color: var(--light-gray); /* Icon color */
+            margin: 0 12px; /* Spacing between icons */
+            font-size: 1.6rem; /* Icon size */
+            transition: color 0.3s ease, transform 0.3s ease;
+            display: inline-block; /* Allows transform */
+        }
+        .social-media a:hover {
+            color: var(--secondary-color); /* Highlight color on hover */
+            transform: translateY(-3px); /* Slight lift effect */
+        }
+
+        /* --- Styles for Additional Pages (Copied from style.css) --- */
+
+        /* Simple Hero Banner for Pages */
+        .simple-hero {
+            background-color: var(--light-gray);
+            padding: 3rem 0;
+            text-align: center;
+            border-bottom: 1px solid #eee;
+        }
+        .simple-hero h1 {
+            color: var(--primary-color);
+            margin-bottom: 0;
+        }
+
+        /* General Page Section Padding */
+        .page-section {
+            padding: 4rem 0;
+        }
+        .page-section h2 {
+            text-align: left; /* Override centered h2 */
+            margin-bottom: 1.5rem;
+        }
+
+        /* About Page List */
+        #about-content ul {
+            list-style: disc;
+            margin-left: 25px;
+            margin-bottom: 1rem;
+        }
+        #about-content ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Page */
+        .contact-info p {
+            margin-bottom: 0.8rem;
+            font-size: 1.1em;
+        }
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--primary-color);
+            width: 20px; /* Align icons */
+            text-align: center;
+        }
+        .contact-form-placeholder {
+            margin-top: 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #eee;
+        }
+        .contact-form-placeholder h3 {
+             margin-bottom: 1rem;
+        }
+
+        /* Login/Signup Page */
+        .auth-container {
+            max-width: 500px; /* Limit width of forms */
+            margin: auto;
+        }
+        .auth-form {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 2rem;
+            display: none; /* Hidden by default, JS toggles 'active' */
+        }
+        .auth-form.active {
+            display: block;
+        }
+        .auth-form h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #555;
+        }
+        .form-group label i {
+             margin-right: 8px;
+             color: var(--primary-color);
+        }
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="password"],
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+            font-family: var(--body-font);
+        }
+        .form-group textarea {
+            resize: vertical;
+        }
+        .form-button { /* Style for buttons inside forms */
+            display: block;
+            width: 100%;
+            padding: 12px 20px; /* Slightly different padding */
+            font-size: 1.1rem;
+        }
+        .form-switch, .forgot-password {
+            text-align: center;
+            margin-top: 1rem;
+            font-size: 0.9em;
+        }
+        .form-switch a, .forgot-password a {
+            color: var(--primary-color);
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+
+        /* Subject Page */
+        .subject-section {
+            background: var(--white);
+            padding: 1.5rem 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            border: 1px solid #eee;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .subject-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 0.5rem;
+        }
+        .subject-section h3 i {
+            margin-right: 10px;
+        }
+        .subject-section ul {
+            list-style: disc;
+            margin-left: 20px;
+        }
+        .subject-section ul li {
+            margin-bottom: 0.5rem;
+        }
+        .subject-section .download-link { /* Ensure download link aligns well */
+            display: inline-block;
+            margin-top: 1rem;
+        }
+
+        /* Legal Pages (Privacy/Terms) */
+        #legal-content h2 {
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            font-size: 1.6rem;
+        }
+        #legal-content h3 {
+             margin-top: 1rem;
+             margin-bottom: 0.3rem;
+             color: var(--text-color);
+             font-size: 1.3rem;
+        }
+        #legal-content p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+
+        /* Responsive Design Adjustments */
+        @media (max-width: 992px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.1rem; }
+            h2 { font-size: 1.8rem; margin-bottom: 2rem;}
+            #hero { min-height: 70vh; padding: 3rem 15px;}
+            #hero p.subtitle { font-size: 1.1rem; }
+            header .container { flex-direction: column; text-align: center; }
+            header .logo { margin-bottom: 1rem; }
+            header nav ul { justify-content: center; flex-wrap: wrap; flex-direction: column; }
+            header nav ul li { margin: 8px 0; margin-left: 0; }
+
+            /* Mobile Dropdown Handling */
+            .dropdown-menu {
+                position: static;
+                display: none; /* Hidden by default, shown via JS click */
+                box-shadow: none;
+                background-color: rgba(0, 0, 0, 0.03); /* Slightly different background */
+                padding: 0.5rem 0 0.5rem 1rem; /* Indent dropdown items */
+                width: 100%;
+                border-radius: 0;
+                text-align: center;
+            }
+            /* Hide hover effect */
+            li.dropdown:hover > .dropdown-menu { display: none; }
+            /* Style for when JS adds 'open' class */
+            .dropdown-menu.open { display: block; }
+            /* Hide desktop arrow */
+            li.dropdown > a::after { display: none; }
+
+            .features-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .feature-card { padding: 2rem 1.5rem; }
+            .blog-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+            .social-media a { font-size: 1.4rem; margin: 0 10px; }
+        }
+
+        @media (max-width: 480px) {
+            .container { padding: 0 15px; }
+            h1 { font-size: 1.8rem; }
+            #hero p.subtitle { font-size: 1rem; }
+            .cta-button { padding: 12px 25px; font-size: 1rem;}
+            header nav ul li a { padding: 6px 10px; }
+            .nav-button { padding: 6px 15px !important;}
+            .feature-card .icon { font-size: 2.5rem; width: 60px; height: 60px; }
+            .feature-card h3 { font-size: 1.2rem; }
+            #cuet-features, #blog-preview { padding: 3rem 0; }
+            h2 { font-size: 1.6rem; margin-bottom: 1.5rem; }
+        }
+    </style>
+    <!-- ===================== -->
+    <!-- == END: CSS STYLES == -->
+    <!-- ===================== -->
+
+</head>
+<body>
+
+    <!-- ============================ -->
+    <!-- == START: HEADER SECTION === -->
+    <!-- ============================ -->
+    <header>
+        <div class="container">
+            <a href="index.html#hero" class="logo">Prag<span>Zo</span></a> <!-- Self-link for combined file -->
+            <nav>
+                <ul>
+                    <li><a href="#hero" class="nav-link active">Home</a></li> <!-- Link to #hero section -->
+                    <li><a href="#cuet-features" class="nav-link">Resources</a></li> <!-- Link to #cuet-features section -->
+                    <li class="dropdown">
+                        <a href="#" class="nav-link">Subjects / Papers</a>
+                        <ul class="dropdown-menu">
+                            <!-- These links won't work correctly in a single file setup -->
+                            <li><a href="#">Language - English</a></li>
+                            <li><a href="#">Language - Hindi</a></li>
+                            <li><hr></li>
+                            <li><a href="#">Domain - Physics</a></li>
+                            <li><a href="#">Domain - Chemistry</a></li>
+                            <li><a href="#">Domain - Maths</a></li>
+                            <li><a href="#">Domain - Accountancy</a></li>
+                            <li><a href="#">Domain - History</a></li>
+                            <li><hr></li>
+                            <li><a href="#">General Test (Section III)</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#blog-preview" class="nav-link">Prep Insights</a></li> <!-- Link to #blog-preview section -->
+                    <li><a href="#">About</a></li> <!-- Placeholder -->
+                    <li><a href="#" class="nav-button">Sign Up / Login</a></li> <!-- Placeholder -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- ========================== -->
+    <!-- === END: HEADER SECTION === -->
+    <!-- ========================== -->
+
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <h1>Navigate <span>CUET</span> Intelligently with PragZo</h1>
+        <p class="subtitle">Your AI-enhanced guide for CUET prep. Get personalized study recommendations, dynamic practice, real-time updates, and performance insights tailored just for you.</p>
+        <a href="#" class="cta-button">Start Your Smart Prep</a> <!-- Placeholder -->
+    </section>
+
+    <!-- CUET Features Section -->
+    <section id="cuet-features">
+        <div class="container">
+            <h2>Understand CUET & Access Smart Resources</h2>
+            <div class="features-grid">
+                 <!-- Feature Card 1: Syllabus -->
+                 <div class="feature-card">
+                    <div class="icon"><i class="fas fa-book-open"></i></div>
+                    <h3>Detailed Syllabus</h3>
+                    <p>Master the official CUET syllabus covering:<br>• Section IA/IB (Languages)<br>• Section II (Domain-Specific Subjects)<br>• Section III (General Test).<br>Always updated and mapped to resources.</p>
+                    <a href="https://drive.google.com/file/d/YOUR_SYLLABUS_PDF_ID_HERE/view?usp=sharing" target="_blank" class="download-link">Download Syllabus PDF →</a>
+                 </div>
+                 <!-- Feature Card 2: Paper Patterns -->
+                 <div class="feature-card">
+                     <div class="icon"><i class="fas fa-file-alt"></i></div>
+                     <h3>Exam Paper Patterns</h3>
+                     <p>Understand the CUET structure:<br>• Objective type MCQs.<br>• Marking: +5 for correct, -1 for incorrect.<br>• Choose languages/domain subjects.<br>• Know attempt limits (e.g., 40 of 50 Qs).<br>Analysis based on latest NTA info.</p>
+                     <a href="https://drive.google.com/file/d/YOUR_PATTERN_PDF_ID_HERE/view?usp=sharing" target="_blank" class="download-link">Download Pattern PDF →</a>
+                 </div>
+                 <!-- Feature Card 3: Subject Resources -->
+                 <div class="feature-card">
+                     <div class="icon"><i class="fas fa-flask"></i></div>
+                     <h3>Subject-Wise Material</h3>
+                     <p>Access curated notes & practice sets for your chosen Domain subjects (e.g., Physics, History, Econ). Select subjects aligned with your desired university course. Personalized recommendations coming soon!</p>
+                     <a href="#" class="download-link">Explore Subjects →</a> <!-- Placeholder -->
+                 </div>
+                 <!-- Feature Card 4: PYQs -->
+                 <div class="feature-card">
+                      <div class="icon"><i class="fas fa-history"></i></div>
+                     <h3>PYQs with Insights</h3>
+                     <p>Practice with actual past CUET papers (MCQs) to understand question difficulty, common topics, and improve speed under exam conditions. Smart performance analysis helps identify weak areas.</p>
+                     <a href="https://drive.google.com/file/d/YOUR_PYQ_SET1_PDF_ID_HERE/view?usp=sharing" target="_blank" class="download-link">Download PYQ Set PDF →</a>
+                 </div>
+                  <!-- Feature Card 5: Mock Tests -->
+                 <div class="feature-card">
+                     <div class="icon"><i class="fas fa-clipboard-check"></i></div>
+                     <h3>Realistic Mock Tests</h3>
+                      <p>Simulate the real CUET environment (MCQs, marking scheme, time limits). Assess your readiness across Languages, Domain Subjects, and the General Test. Adaptive tests coming soon!</p>
+                      <a href="https://drive.google.com/file/d/YOUR_MOCKTEST_INFO_PDF_ID_HERE/view?usp=sharing" target="_blank" class="download-link">Mock Test Info PDF →</a>
+                 </div>
+                  <!-- Feature Card 6: Exam Info & Updates -->
+                 <div class="feature-card">
+                     <div class="icon"><i class="fas fa-info-circle"></i></div>
+                     <h3>Real-Time Info Hub</h3>
+                     <p>Get instant, verified updates on crucial CUET details: application dates, admit cards, syllabus changes, university policies. Stay ahead with continuously monitored information.</p>
+                      <a href="https://drive.google.com/file/d/YOUR_NOTIFICATION_SUMMARY_PDF_ID_HERE/view?usp=sharing" target="_blank" class="download-link">Latest News PDF →</a>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Preview Section -->
+    <section id="blog-preview">
+        <div class="container">
+            <h2>Latest Prep Insights & Strategies</h2>
+            <div class="blog-grid">
+                  <article class="blog-post-preview">
+                    <img src="https://via.placeholder.com/400x200/a7ffeb/333?text=CUET+Time+Mastery" alt="CUET Time Management">
+                    <div class="blog-content">
+                        <h3>Mastering Time Management for CUET 2025</h3>
+                        <p>Actionable strategies to optimize your study schedule and maximize your score potential under time pressure...</p>
+                        <a href="#" class="read-more-link">Read Full Post →</a> <!-- Placeholder -->
+                    </div>
+                </article>
+                 <article class="blog-post-preview">
+                    <img src="https://via.placeholder.com/400x200/80deea/333?text=Deep+Dive+CUET+PYQs" alt="Analyzing CUET PYQs">
+                    <div class="blog-content">
+                        <h3>Deep Dive: Extracting Maximum Value from CUET PYQs</h3>
+                        <p>Learn techniques to analyze past papers effectively, identify crucial patterns, and predict question types...</p>
+                        <a href="#" class="read-more-link">Read Full Post →</a> <!-- Placeholder -->
+                    </div>
+                </article>
+                <article class="blog-post-preview">
+                     <img src="https://via.placeholder.com/400x200/cfd8dc/333?text=Winning+Subject+Tactics" alt="CUET Subject Strategy">
+                     <div class="blog-content">
+                        <h3>Winning Tactics for CUET Domain Subjects & General Test</h3>
+                         <p>Proven approaches to tackle different sections of the CUET exam efficiently and effectively...</p>
+                         <a href="#" class="read-more-link">Read Full Post →</a> <!-- Placeholder -->
+                    </div>
+                </article>
+            </div>
+             <!-- <div style="text-align: center; margin-top: 2rem;"><a href="#" class="cta-button">View All Posts</a></div> --> <!-- Placeholder -->
+        </div>
+    </section>
+
+
+    <!-- ============================ -->
+    <!-- == START: FOOTER SECTION === -->
+    <!-- ============================ -->
+    <footer>
+        <div class="container">
+            <div class="social-media">
+                <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <p>© <span id="current-year"></span> PragZo EduTech. All Rights Reserved.</p>
+            <p>
+                <a href="#">About Us</a> | <!-- Placeholder -->
+                <a href="#">Contact</a> | <!-- Placeholder -->
+                <a href="#">Privacy Policy</a> | <!-- Placeholder -->
+                <a href="#">Terms of Service</a> <!-- Placeholder -->
+            </p>
+        </div>
+    </footer>
+    <!-- ========================== -->
+    <!-- === END: FOOTER SECTION === -->
+    <!-- ========================== -->
+
+
+    <!-- ============================ -->
+    <!-- == START: JAVASCRIPT CODE == -->
+    <!-- ============================ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // Set current year in footer
+            const currentYearSpan = document.getElementById('current-year');
+            if (currentYearSpan) {
+                currentYearSpan.textContent = new Date().getFullYear();
+            }
+
+            // --- Smooth Scrolling & Active Nav Link Highlighting ---
+            const navLinks = document.querySelectorAll('header nav a.nav-link:not(.dropdown > a)'); // Exclude dropdown parent link
+            const header = document.querySelector('header');
+            let headerHeight = header ? header.offsetHeight : 0; // Initial header height
+
+            // Recalculate header height on resize
+            window.addEventListener('resize', () => {
+                headerHeight = header ? header.offsetHeight : 0;
+            });
+
+            // Function for smooth scrolling
+            function smoothScrollTo(targetId) {
+                if (targetId && targetId.startsWith('#')) {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const elementPosition = targetElement.getBoundingClientRect().top + window.pageYOffset;
+                        const offsetPosition = elementPosition - headerHeight; // Use dynamic header height
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            }
+
+            // Add click listeners for main nav links pointing to sections on THIS page
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    // Only prevent default if it's linking to a section (#...) on this page
+                    if (targetId && targetId.startsWith('#')) {
+                        e.preventDefault();
+                        smoothScrollTo(targetId);
+                    }
+                    // If it links to another page (e.g., about.html), let the default action happen
+                });
+            });
+
+            // Dropdown links won't scroll correctly in single-page combined file
+            // Commenting out this part for the combined version
+            /*
+            const dropdownLinks = document.querySelectorAll('.dropdown-menu a');
+            dropdownLinks.forEach(link => {
+                 link.addEventListener('click', function(e) {
+                     const targetId = this.getAttribute('href');
+                     if (targetId && targetId.startsWith('#')) {
+                         e.preventDefault();
+                         smoothScrollTo(targetId);
+                         // Optionally close dropdown after click (would need more JS)
+                         const parentDropdown = this.closest('.dropdown-menu');
+                         if(parentDropdown && parentDropdown.classList.contains('open')){
+                            parentDropdown.classList.remove('open');
+                         }
+                     }
+                 });
+            });
+            */
+
+
+            // Debounce function
+            function debounce(func, wait = 15, immediate = false) {
+                let timeout;
+                return function() {
+                    const context = this, args = arguments;
+                    const later = function() { timeout = null; if (!immediate) func.apply(context, args); };
+                    const callNow = immediate && !timeout;
+                    clearTimeout(timeout);
+                    timeout = setTimeout(later, wait);
+                    if (callNow) func.apply(context, args);
+                };
+            }
+
+            // Update active nav link on scroll
+            const updateActiveLink = debounce(() => {
+                let currentSectionId = '';
+                // Only consider sections present in THIS document
+                const sections = document.querySelectorAll('section[id]');
+                const scrollPosition = window.pageYOffset;
+
+                let firstSectionTop = Infinity;
+                if (sections.length > 0) {
+                    firstSectionTop = sections[0].offsetTop - headerHeight - 50;
+                }
+
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - headerHeight - 50; // Adjust offset as needed
+                    if (scrollPosition >= sectionTop) {
+                        currentSectionId = section.getAttribute('id');
+                    }
+                });
+
+                // Check if scrolled to the top
+                if (scrollPosition < firstSectionTop) {
+                    currentSectionId = 'hero'; // Default to hero if above the first section
+                }
+
+                // Update active classes for main nav links
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    // Only activate if the href matches the current section ID
+                    const linkHref = link.getAttribute('href');
+                    if (linkHref === '#' + currentSectionId) {
+                        link.classList.add('active');
+                    }
+                });
+
+            }, 50); // Check every 50ms during scroll
+
+            window.addEventListener('scroll', updateActiveLink);
+            updateActiveLink(); // Initial check on load
+
+
+            // --- Mobile Dropdown Toggle ---
+            const dropdownToggle = document.querySelector('.dropdown > a'); // The parent link
+            const dropdownMenu = document.querySelector('.dropdown-menu');
+
+            if (dropdownToggle && dropdownMenu) {
+                dropdownToggle.addEventListener('click', function(e) {
+                    // Prevent default ONLY if the link is just a placeholder (#)
+                    if (this.getAttribute('href') === '#') {
+                        e.preventDefault();
+                    }
+                    // Toggle the 'open' class on the menu
+                    dropdownMenu.classList.toggle('open');
+                });
+
+                // Optional: Close dropdown if clicking outside of it on mobile
+                document.addEventListener('click', function(e) {
+                    // Check if the click is outside the toggle AND outside the menu
+                    if (!dropdownToggle.contains(e.target) && !dropdownMenu.contains(e.target)) {
+                        // If the menu is open, close it
+                        if (dropdownMenu.classList.contains('open')) {
+                            dropdownMenu.classList.remove('open');
+                        }
+                    }
+                });
+            }
+
+        }); // End DOMContentLoaded
+    </script>
+    <!-- ========================== -->
+    <!-- === END: JAVASCRIPT CODE === -->
+    <!-- ========================== -->
+
+</body>
+</html>

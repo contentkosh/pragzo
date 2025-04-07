@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact PragZo | Get In Touch</title>
+
+    <!-- Font Awesome CDN & CSS Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header -->
+     <header>
+        <div class="container">
+            <a href="index.html#hero" class="logo">Prag<span>Zo</span></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html#hero" class="nav-link">Home</a></li>
+                    <li><a href="index.html#cuet-features" class="nav-link">Resources</a></li>
+                    <li class="dropdown">
+                        <a href="subjects.html" class="nav-link" aria-haspopup="true" aria-expanded="false">Subjects / Papers</a>
+                         <ul class="dropdown-menu">
+                            <li><a href="subject-template.html?subject=English">English</a></li>
+                            <li><a href="subject-template.html?subject=Hindi">Hindi</a></li>
+                            <li><hr></li>
+                            <li><a href="subject-template.html?subject=Physics">Physics</a></li>
+                            <li><a href="subject-template.html?subject=Chemistry">Chemistry</a></li>
+                            <li><a href="subject-template.html?subject=Biology">Biology</a></li>
+                            <li><a href="subject-template.html?subject=Maths">Mathematics</a></li>
+                             <li><hr></li>
+                            <li><a href="subject-template.html?subject=Accountancy">Accountancy</a></li>
+                            <li><a href="subject-template.html?subject=Economics">Economics</a></li>
+                            <li><a href="subject-template.html?subject=BusinessStudies">Business Studies</a></li>
+                             <li><hr></li>
+                            <li><a href="subject-template.html?subject=History">History</a></li>
+                            <li><a href="subject-template.html?subject=Geography">Geography</a></li>
+                            <li><a href="subject-template.html?subject=PoliticalScience">Political Science</a></li>
+                            <li><a href="subject-template.html?subject=Psychology">Psychology</a></li>
+                            <li><hr></li>
+                            <li><a href="subject-template.html?subject=GeneralTest">General Test</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="prep-insights.html" class="nav-link">Prep Insights</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero/Banner -->
+    <section id="page-hero" class="simple-hero">
+        <div class="container">
+            <h1>Contact Us</h1>
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <section id="contact-details" class="page-section">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <p>We'd love to hear from you! Whether you have questions about CUET, feedback on our platform, technical issues, or partnership inquiries, please don't hesitate to reach out using the methods below.</p>
+
+            <div class="contact-info">
+                <h3>Our Details:</h3>
+                <p><strong><i class="fas fa-envelope"></i> Email:</strong> <a href="mailto:support@pragzo.com">support@pragzo.com</a> (For support & general queries)</p>
+                <p><strong><i class="fas fa-briefcase"></i> Partnerships:</strong> <a href="mailto:partners@pragzo.com">partners@pragzo.com</a> (For business inquiries)</p>
+                <p><strong><i class="fas fa-map-marker-alt"></i> Address:</strong> PragZo EduTech Pvt. Ltd., [Your Building, Street], [Your City, Pincode], India (Placeholder)</p>
+                 <p><strong><i class="fas fa-headset"></i> Support Hours:</strong> Monday - Friday, 10:00 AM - 6:00 PM (IST)</p>
+            </div>
+
+            <div class="contact-form-placeholder">
+                <h3>Send Us a Message Directly:</h3>
+                <p><em>Please note: This form is a visual placeholder. Functionality requires backend integration. For now, please use email.</em></p>
+                 <form action="#" method="POST" onsubmit="alert('Form submission requires backend setup. Please use email for now.'); return false;">
+                    <div class="form-group">
+                        <label for="contact-name"><i class="fas fa-user"></i> Name:</label>
+                        <input type="text" id="contact-name" name="name" required placeholder="Your Full Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-email"><i class="fas fa-envelope"></i> Email:</label>
+                        <input type="email" id="contact-email" name="email" required placeholder="your.email@example.com">
+                    </div>
+                     <div class="form-group">
+                        <label for="contact-mobile"><i class="fas fa-mobile-alt"></i> Mobile Number:</label>
+                        <input type="tel" id="contact-mobile" name="phone" placeholder="10-digit mobile number" pattern="[6-9]{1}[0-9]{9}" title="Enter a valid 10-digit Indian mobile number">
+                    </div>
+                     <div class="form-group">
+                        <label for="contact-subject"><i class="fas fa-pen"></i> Subject:</label>
+                        <input type="text" id="contact-subject" name="subject" required placeholder="Reason for contacting us">
+                    </div>
+                    <div class="form-group">
+                        <label for="contact-message"><i class="fas fa-comment-dots"></i> Message:</label>
+                        <textarea id="contact-message" name="message" rows="5" required placeholder="Enter your message here..."></textarea>
+                    </div>
+                    <button type="submit" class="cta-button form-button">Send Message (Demo)</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-media">
+                <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
+            </div>
+            <p>© <span id="current-year"></span> PragZo EduTech. All Rights Reserved.</p>
+            <p>
+                <a href="about.html">About Us</a> |
+                <a href="contact.html">Contact</a> | <!-- Active Link -->
+                <a href="privacy.html">Privacy Policy</a> |
+                <a href="terms.html">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+
+     <!-- Modal Download Forms (Copied from index.html) -->
+     <div class="modal-container" id="syllabus-modal"> <div class="modal-overlay modal-close"></div> <div class="modal-content"> <button class="modal-close-button modal-close" aria-label="Close Modal">×</button> <h3 class="modal-title">Download Syllabus PDF</h3> <p class="form-prompt">Please enter your details below:</p> <form class="modal-download-form"> <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div> <div class="form-group"><input type="email" name="email" placeholder="Your Email" required></div> <div class="form-group"><input type="tel" name="phone" placeholder="Mobile Number (Optional)" pattern="[6-9]{1}[0-9]{9}" title="Enter a valid 10-digit Indian mobile number"></div> <input type="hidden" name="resource_id" value="syllabus"> <button type="submit" class="submit-download-button"><i class="fas fa-download"></i> Submit & Download</button> </form> </div> </div>
+     <div class="modal-container" id="pattern-modal"> <div class="modal-overlay modal-close"></div> <div class="modal-content"> <button class="modal-close-button modal-close" aria-label="Close Modal">×</button> <h3 class="modal-title">Download Pattern PDF</h3> <p class="form-prompt">Please enter your details below:</p> <form class="modal-download-form"> <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div> <div class="form-group"><input type="email" name="email" placeholder="Your Email" required></div> <div class="form-group"><input type="tel" name="phone" placeholder="Mobile Number (Optional)" pattern="[6-9]{1}[0-9]{9}" title="Enter a valid 10-digit Indian mobile number"></div> <input type="hidden" name="resource_id" value="pattern"> <button type="submit" class="submit-download-button"><i class="fas fa-download"></i> Submit & Download</button> </form> </div> </div>
+     <div class="modal-container" id="pyq-modal"> <div class="modal-overlay modal-close"></div> <div class="modal-content"> <button class="modal-close-button modal-close" aria-label="Close Modal">×</button> <h3 class="modal-title">Download PYQs PDF</h3> <p class="form-prompt">Please enter your details below:</p> <form class="modal-download-form"> <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div> <div class="form-group"><input type="email" name="email" placeholder="Your Email" required></div> <div class="form-group"><input type="tel" name="phone" placeholder="Mobile Number (Optional)" pattern="[6-9]{1}[0-9]{9}" title="Enter a valid 10-digit Indian mobile number"></div> <input type="hidden" name="resource_id" value="pyq_general"> <button type="submit" class="submit-download-button"><i class="fas fa-download"></i> Submit & Download</button> </form> </div> </div>
+     <div class="modal-container" id="mocktest-info-modal"> <div class="modal-overlay modal-close"></div> <div class="modal-content"> <button class="modal-close-button modal-close" aria-label="Close Modal">×</button> <h3 class="modal-title">Download Mock Test Info PDF</h3> <p class="form-prompt">Please enter your details below:</p> <form class="modal-download-form"> <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div> <div class="form-group"><input type="email" name="email" placeholder="Your Email" required></div> <div class="form-group"><input type="tel" name="phone" placeholder="Mobile Number (Optional)" pattern="[6-9]{1}[0-9]{9}" title="Enter a valid 10-digit Indian mobile number"></div> <input type="hidden" name="resource_id" value="mocktest_info"> <button type="submit" class="submit-download-button"><i class="fas fa-download"></i> Submit & Download</button> </form> </div> </div>
+     <div class="modal-container" id="news-modal"> <div class="modal-overlay modal-close"></div> <div class="modal-content"> <button class="modal-close-button modal-close" aria-label="Close Modal">×</button> <h3 class="modal-title">Download Latest News PDF</h3> <p class="form-prompt">Please enter your details below:</p> <form class="modal-download-form"> <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div> <div class="form-group"><input type="email" name="email" placeholder="Your Email" required></div> <div class="form-group"><input type="tel" name="phone" placeholder="Mobile Number (Optional)" pattern="[6-9]{1}[0-9]{9}" title="Enter a valid 10-digit Indian mobile number"></div> <input type="hidden" name="resource_id" value="latest_news"> <button type="submit" class="submit-download-button"><i class="fas fa-download"></i> Submit & Download</button> </form> </div> </div>
+     <div class="modal-container" id="subject-syllabus-modal"> <div class="modal-overlay modal-close"></div> <div class="modal-content"> <button class="modal-close-button modal-close" aria-label="Close Modal">×</button> <h3 class="modal-title">Download Syllabus PDF</h3> <p class="form-prompt">Please enter your details below:</p> <form class="modal-download-form"> <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div> <div class="form-group"><input type="email" name="email" placeholder="Your Email" required></div> <div class="form-group"><input type="tel" name="phone" placeholder="Mobile Number (Optional)" pattern="[6-9]{1}[0-9]{9}" title="Enter a valid 10-digit Indian mobile number"></div> <input type="hidden" name="resource_id" value="subject_syllabus"> <button type="submit" class="submit-download-button"><i class="fas fa-download"></i> Submit & Download</button> </form> </div> </div>
+     <div class="modal-container" id="subject-notes-modal"> <div class="modal-overlay modal-close"></div> <div class="modal-content"> <button class="modal-close-button modal-close" aria-label="Close Modal">×</button> <h3 class="modal-title">Download Notes PDF</h3> <p class="form-prompt">Please enter your details below:</p> <form class="modal-download-form"> <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div> <div class="form-group"><input type="email" name="email" placeholder="Your Email" required></div> <div class="form-group"><input type="tel" name="phone" placeholder="Mobile Number (Optional)" pattern="[6-9]{1}[0-9]{9}" title="Enter a valid 10-digit Indian mobile number"></div> <input type="hidden" name="resource_id" value="subject_notes"> <button type="submit" class="submit-download-button"><i class="fas fa-download"></i> Submit & Download</button> </form> </div> </div>
+     <div class="modal-container" id="subject-pyq-modal"> <div class="modal-overlay modal-close"></div> <div class="modal-content"> <button class="modal-close-button modal-close" aria-label="Close Modal">×</button> <h3 class="modal-title">Download PYQs PDF</h3> <p class="form-prompt">Please enter your details below:</p> <form class="modal-download-form"> <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div> <div class="form-group"><input type="email" name="email" placeholder="Your Email" required></div> <div class="form-group"><input type="tel" name="phone" placeholder="Mobile Number (Optional)" pattern="[6-9]{1}[0-9]{9}" title="Enter a valid 10-digit Indian mobile number"></div> <input type="hidden" name="resource_id" value="subject_pyq"> <button type="submit" class="submit-download-button"><i class="fas fa-download"></i> Submit & Download</button> </form> </div> </div>
+    <!-- End Modal Download Forms -->
+
+    <!-- Link to your JavaScript file -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>

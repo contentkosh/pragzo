@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PragZo - Your Smart Path to CUET Success</title>
+
+    <!-- Font Awesome CDN & CSS Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <a href="index.html#hero" class="logo">Prag<span>Zo</span></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html#hero" class="nav-link active">Home</a></li>
+                    <li><a href="index.html#cuet-features" class="nav-link">Resources</a></li>
+                    <li class="dropdown">
+                         <a href="" class="nav-link" aria-haspopup="true" aria-expanded="false">Subjects
+                        <ul class="dropdown-menu">
+                            <li><a href="subject-template.html?subject=English">English</a></li>
+                            <li><a href="subject-template.html?subject=Hindi">Hindi</a></li>
+                            <li><hr></li>
+                            <li><a href="subject-template.html?subject=Physics">Physics</a></li>
+                            <li><a href="subject-template.html?subject=Chemistry">Chemistry</a></li>
+                            <li><a href="subject-template.html?subject=Biology">Biology</a></li>
+                            <li><a href="subject-template.html?subject=Maths">Mathematics</a></li>
+                             <li><hr></li>
+                            <li><a href="subject-template.html?subject=Accountancy">Accountancy</a></li>
+                            <li><a href="subject-template.html?subject=Economics">Economics</a></li>
+                            <li><a href="subject-template.html?subject=BusinessStudies">Business Studies</a></li>
+                             <li><hr></li>
+                            <li><a href="subject-template.html?subject=History">History</a></li>
+                            <li><a href="subject-template.html?subject=Geography">Geography</a></li>
+                            <li><a href="subject-template.html?subject=PoliticalScience">Political Science</a></li>
+                            <li><a href="subject-template.html?subject=Psychology">Psychology</a></li>
+                            <li><hr></li>
+                            <li><a href="subject-template.html?subject=GeneralTest">General Test</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="prep-insights.html" class="nav-link">Prep Insights</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <h1>Unlock Your <span>CUET Edge</span> with PragZo</h1>
+        <p class="subtitle">Leverage AI-powered insights, adaptive practice tests, always-current resources, and personalized guidance to conquer the CUET exam and secure your future!</p>
+        <a href="#cuet-features" class="cta-button">Explore Features</a>
+    </section>
+
+    <!-- CUET Features Section -->
+    <section id="cuet-features">
+        <div class="container">
+            <h2>Your Smart Toolkit for CUET Domination</h2>
+            <div class="features-grid">
+                 <!-- Feature Card 1: Syllabus -->
+                 <div class="feature-card">
+                    <div class="icon"><i class="fas fa-book-open"></i></div>
+                    <h3>Master the Blueprint</h3>
+                    <p>Access the *always-updated*, official CUET syllabus for Languages, Domains & General Test, intelligently mapped to pinpoint relevant study materials.</p>
+                    <button type="button" class="download-trigger-button modal-trigger" data-modal-id="syllabus-modal" data-pdf-url="https://drive.google.com/file/d/YOUR_SYLLABUS_PDF_ID_HERE/view?usp=sharing">
+                        <i class="fas fa-download"></i> Get Syllabus PDF
+                    </button>
+                 </div>
+                 <!-- Feature Card 2: Paper Patterns -->
+                 <div class="feature-card">
+                     <div class="icon"><i class="fas fa-file-alt"></i></div>
+                     <h3>Decode the Pattern</h3>
+                     <p>Gain clarity on the latest CUET structure: MCQs, marking scheme (+5/-1), subject choices, and question attempt strategies, backed by NTA insights.</p>
+                    <button type="button" class="download-trigger-button modal-trigger" data-modal-id="pattern-modal" data-pdf-url="https://drive.google.com/file/d/YOUR_PATTERN_PDF_ID_HERE/view?usp=sharing">
+                         <i class="fas fa-download"></i> View Pattern PDF
+                     </button>
+                 </div>
+                 <!-- Feature Card 3: Subject Resources -->
+                 <div class="feature-card">
+                     <div class="icon"><i class="fas fa-flask"></i></div>
+                     <h3>Targeted Subject Prep</h3>
+                     <p>Dive into curated notes & practice sets for your specific Domain subjects. Align your prep with university requirements. *Personalized paths coming soon!*</p>
+                     <!-- === START: Updated Link === -->
+                     <a href="subjects.html" class="download-link">
+                         <i class="fas fa-search"></i> Explore All Subjects
+                     </a>
+                      <!-- === END: Updated Link === -->
+                 </div>
+                 <!-- Feature Card 4: PYQs -->
+                 <div class="feature-card">
+                      <div class="icon"><i class="fas fa-history"></i></div>
+                     <h3>Learn from the Past</h3>
+                     <p>Sharpen skills with authentic past CUET papers. Understand question trends, difficulty, and timing. *Smart analysis highlights your focus areas.*</p>
+                    <button type="button" class="download-trigger-button modal-trigger" data-modal-id="pyq-modal" data-pdf-url="https://drive.google.com/file/d/YOUR_PYQ_SET1_PDF_ID_HERE/view?usp=sharing">
+                         <i class="fas fa-download"></i> Download PYQs PDF
+                     </button>
+                 </div>
+                  <!-- Feature Card 5: Mock Tests -->
+                 <div class="feature-card">
+                     <div class="icon"><i class="fas fa-clipboard-check"></i></div>
+                     <h3>Simulate Success</h3>
+                      <p>Experience the real CUET pressure with realistic mock tests covering all sections. Gauge your readiness & refine strategy. *Adaptive tests coming soon!*</p>
+                    <button type="button" class="download-trigger-button modal-trigger" data-modal-id="mocktest-info-modal" data-pdf-url="https://drive.google.com/file/d/YOUR_MOCKTEST_INFO_PDF_ID_HERE/view?usp=sharing">
+                           <i class="fas fa-info-circle"></i> Mock Test PDF
+                      </button>
+                 </div>
+                  <!-- Feature Card 6: Exam Info & Updates -->
+                 <div class="feature-card">
+                     <div class="icon"><i class="fas fa-bullhorn"></i></div>
+                     <h3>Stay Instantly Informed</h3>
+                     <p>Never miss a deadline! Get verified, real-time updates on CUET dates, applications, admit cards, policy changes, all monitored for you.</p>
+                    <button type="button" class="download-trigger-button modal-trigger" data-modal-id="news-modal" data-pdf-url="https://drive.google.com/file/d/YOUR_NOTIFICATION_SUMMARY_PDF_ID_HERE/view?usp=sharing">
+                           <i class="fas fa-download"></i> Get Latest News PDF
+                      </button>
+                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-media">
+                <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
+            </div>
+            <p>© <span id="current-year"></span> PragZo EduTech. All Rights Reserved.</p>
+            <p>
+                <a href="about.html">About Us</a> |
+                <a href="contact.html">Contact</a> |
+                <a href="privacy.html">Privacy Policy</a> |
+                <a href="terms.html">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Modal Download Forms -->
+    <div class="modal-container" id="syllabus-modal"> <div class="modal-overlay modal-close"></div> <div class="modal-content"> <button class="modal-close-button modal-close" aria-label="Close Modal">×</button> <h3 class="modal-title">Download Syllabus PDF</h3> <p class="form-prompt">Please enter your details below:</p> <form class="modal-download-form"> <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div> <div class="form-group"><input type="email" name="email" placeholder="Your Email" required></div> <div class="form-group"><input type="tel" name="phone" placeholder="Mobile Number (Optional)" pattern="[6-9]{1}[0-9]{9}" title="Enter a valid 10-digit Indian mobile number"></div> <input type="hidden" name="resource_id" value="syllabus"> <button type="submit" class="submit-download-button"><i class="fas fa-download"></i> Submit & Download</button> </form> </div> </div>
+    <div class="modal-container" id="pattern-modal"> <div class="modal-overlay modal-close"></div> <div class="modal-content"> <button class="modal-close-button modal-close" aria-label="Close Modal">×</button> <h3 class="modal-title">Download Pattern PDF</h3> <p class="form-prompt">Please enter your details below:</p> <form class="modal-download-form"> <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div> <div class="form-group"><input type="email" name="email" placeholder="Your Email" required></div> <div class="form-group"><input type="tel" name="phone" placeholder="Mobile Number (Optional)" pattern="[6-9]{1}[0-9]{9}" title="Enter a valid 10-digit Indian mobile number"></div> <input type="hidden" name="resource_id" value="pattern"> <button type="submit" class="submit-download-button"><i class="fas fa-download"></i> Submit & Download</button> </form> </div> </div>
+    <div class="modal-container" id="pyq-modal"> <div class="modal-overlay modal-close"></div> <div class="modal-content"> <button class="modal-close-button modal-close" aria-label="Close Modal">×</button> <h3 class="modal-title">Download PYQs PDF</h3> <p class="form-prompt">Please enter your details below:</p> <form class="modal-download-form"> <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div> <div class="form-group"><input type="email" name="email" placeholder="Your Email" required></div> <div class="form-group"><input type="tel" name="phone" placeholder="Mobile Number (Optional)" pattern="[6-9]{1}[0-9]{9}" title="Enter a valid 10-digit Indian mobile number"></div> <input type="hidden" name="resource_id" value="pyq_general"> <button type="submit" class="submit-download-button"><i class="fas fa-download"></i> Submit & Download</button> </form> </div> </div>
+    <div class="modal-container" id="mocktest-info-modal"> <div class="modal-overlay modal-close"></div> <div class="modal-content"> <button class="modal-close-button modal-close" aria-label="Close Modal">×</button> <h3 class="modal-title">Download Mock Test Info PDF</h3> <p class="form-prompt">Please enter your details below:</p> <form class="modal-download-form"> <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div> <div class="form-group"><input type="email" name="email" placeholder="Your Email" required></div> <div class="form-group"><input type="tel" name="phone" placeholder="Mobile Number (Optional)" pattern="[6-9]{1}[0-9]{9}" title="Enter a valid 10-digit Indian mobile number"></div> <input type="hidden" name="resource_id" value="mocktest_info"> <button type="submit" class="submit-download-button"><i class="fas fa-download"></i> Submit & Download</button> </form> </div> </div>
+    <div class="modal-container" id="news-modal"> <div class="modal-overlay modal-close"></div> <div class="modal-content"> <button class="modal-close-button modal-close" aria-label="Close Modal">×</button> <h3 class="modal-title">Download Latest News PDF</h3> <p class="form-prompt">Please enter your details below:</p> <form class="modal-download-form"> <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div> <div class="form-group"><input type="email" name="email" placeholder="Your Email" required></div> <div class="form-group"><input type="tel" name="phone" placeholder="Mobile Number (Optional)" pattern="[6-9]{1}[0-9]{9}" title="Enter a valid 10-digit Indian mobile number"></div> <input type="hidden" name="resource_id" value="latest_news"> <button type="submit" class="submit-download-button"><i class="fas fa-download"></i> Submit & Download</button> </form> </div> </div>
+    <div class="modal-container" id="subject-syllabus-modal"> <div class="modal-overlay modal-close"></div> <div class="modal-content"> <button class="modal-close-button modal-close" aria-label="Close Modal">×</button> <h3 class="modal-title">Download Syllabus PDF</h3> <p class="form-prompt">Please enter your details below:</p> <form class="modal-download-form"> <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div> <div class="form-group"><input type="email" name="email" placeholder="Your Email" required></div> <div class="form-group"><input type="tel" name="phone" placeholder="Mobile Number (Optional)" pattern="[6-9]{1}[0-9]{9}" title="Enter a valid 10-digit Indian mobile number"></div> <input type="hidden" name="resource_id" value="subject_syllabus"> <button type="submit" class="submit-download-button"><i class="fas fa-download"></i> Submit & Download</button> </form> </div> </div>
+    <div class="modal-container" id="subject-notes-modal"> <div class="modal-overlay modal-close"></div> <div class="modal-content"> <button class="modal-close-button modal-close" aria-label="Close Modal">×</button> <h3 class="modal-title">Download Notes PDF</h3> <p class="form-prompt">Please enter your details below:</p> <form class="modal-download-form"> <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div> <div class="form-group"><input type="email" name="email" placeholder="Your Email" required></div> <div class="form-group"><input type="tel" name="phone" placeholder="Mobile Number (Optional)" pattern="[6-9]{1}[0-9]{9}" title="Enter a valid 10-digit Indian mobile number"></div> <input type="hidden" name="resource_id" value="subject_notes"> <button type="submit" class="submit-download-button"><i class="fas fa-download"></i> Submit & Download</button> </form> </div> </div>
+    <div class="modal-container" id="subject-pyq-modal"> <div class="modal-overlay modal-close"></div> <div class="modal-content"> <button class="modal-close-button modal-close" aria-label="Close Modal">×</button> <h3 class="modal-title">Download PYQs PDF</h3> <p class="form-prompt">Please enter your details below:</p> <form class="modal-download-form"> <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div> <div class="form-group"><input type="email" name="email" placeholder="Your Email" required></div> <div class="form-group"><input type="tel" name="phone" placeholder="Mobile Number (Optional)" pattern="[6-9]{1}[0-9]{9}" title="Enter a valid 10-digit Indian mobile number"></div> <input type="hidden" name="resource_id" value="subject_pyq"> <button type="submit" class="submit-download-button"><i class="fas fa-download"></i> Submit & Download</button> </form> </div> </div>
+    <!-- End Modal Download Forms -->
+
+
+    <!-- Link to your JavaScript file -->
+    <script src="js/script.js"></script>
+
+</body>
+</html>

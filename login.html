@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login or Sign Up - PragZo</title>
+
+    <!-- Font Awesome CDN & CSS Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <a href="index.html#hero" class="logo">Prag<span>Zo</span></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html#hero" class="nav-link">Home</a></li>
+                    <li><a href="index.html#cuet-features" class="nav-link">Resources</a></li>
+                    <li class="dropdown">
+                         <a href="subjects.html" class="nav-link" aria-haspopup="true" aria-expanded="false">Subjects
+                         <ul class="dropdown-menu">
+                           <li><a href="subject-template.html?subject=English">English</a></li>
+                            <li><a href="subject-template.html?subject=Hindi">Hindi</a></li>
+                            <li><hr></li>
+                            <li><a href="subject-template.html?subject=Physics">Physics</a></li>
+                            <li><a href="subject-template.html?subject=Chemistry">Chemistry</a></li>
+                            <li><a href="subject-template.html?subject=Biology">Biology</a></li>
+                            <li><a href="subject-template.html?subject=Maths">Mathematics</a></li>
+                             <li><hr></li>
+                            <li><a href="subject-template.html?subject=Accountancy">Accountancy</a></li>
+                            <li><a href="subject-template.html?subject=Economics">Economics</a></li>
+                            <li><a href="subject-template.html?subject=BusinessStudies">Business Studies</a></li>
+                             <li><hr></li>
+                            <li><a href="subject-template.html?subject=History">History</a></li>
+                            <li><a href="subject-template.html?subject=Geography">Geography</a></li>
+                            <li><a href="subject-template.html?subject=PoliticalScience">Political Science</a></li>
+                            <li><a href="subject-template.html?subject=Psychology">Psychology</a></li>
+                            <li><hr></li>
+                            <li><a href="subject-template.html?subject=GeneralTest">General Test</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="prep-insights.html" class="nav-link">Prep Insights</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="login.html" class="nav-button active">Sign Up / Login</a></li> <!-- Active Link -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero/Banner -->
+    <section id="page-hero" class="simple-hero">
+        <div class="container">
+            <h1>Access Your Account</h1>
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <section id="auth-forms" class="page-section">
+        <div class="container auth-container">
+
+            <!-- Login Form (Starts Active) -->
+            <div id="login-form" class="auth-form active">
+                <h2>Login</h2>
+                <p>Access your dashboard, mock tests, and saved progress.</p>
+                <form action="#" method="POST" onsubmit="alert('Login requires backend setup. This is a demo.'); return false;">
+                    <div class="form-group">
+                        <label for="login-email"><i class="fas fa-envelope"></i> Email:</label>
+                        <input type="email" id="login-email" name="email" required placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password"><i class="fas fa-lock"></i> Password:</label>
+                        <input type="password" id="login-password" name="password" required placeholder="Enter your password">
+                    </div>
+                    <button type="submit" class="cta-button form-button">Login (Demo)</button>
+                    <p class="form-switch">Don't have an account? <a href="#signup" onclick="toggleForms(); return false;">Sign Up</a></p>
+                     <p class="forgot-password"><a href="#" onclick="alert('Forgot Password functionality requires backend setup.'); return false;">Forgot Password?</a></p>
+                </form>
+            </div>
+
+            <!-- Signup Form (Initially Hidden) -->
+            <div id="signup-form" class="auth-form">
+                <h2>Sign Up</h2>
+                <p>Create your PragZo account to start your CUET prep journey.</p>
+                 <form action="#" method="POST" onsubmit="alert('Sign Up requires backend setup. This is a demo.'); return false;">
+                    <div class="form-group">
+                        <label for="signup-name"><i class="fas fa-user"></i> Name:</label>
+                        <input type="text" id="signup-name" name="name" required placeholder="Your Full Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-email"><i class="fas fa-envelope"></i> Email:</label>
+                        <input type="email" id="signup-email" name="email" required placeholder="your.email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-mobile"><i class="fas fa-mobile-alt"></i> Mobile Number:</label>
+                        <input type="tel" id="signup-mobile" name="phone" required placeholder="10-digit mobile number" pattern="[6-9]{1}[0-9]{9}" title="Enter a valid 10-digit Indian mobile number">
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password"><i class="fas fa-lock"></i> Password:</label>
+                        <input type="password" id="signup-password" name="password" required placeholder="Choose a strong password">
+                    </div>
+                     <div class="form-group">
+                        <label for="signup-confirm-password"><i class="fas fa-lock"></i> Confirm Password:</label>
+                        <input type="password" id="signup-confirm-password" name="confirm_password" required placeholder="Re-enter your password">
+                    </div>
+                    <div class="form-group terms-check">
+                        <input type="checkbox" id="terms" name="terms" required>
+                        <label for="terms">I agree to the <a href="terms.html" target="_blank">Terms of Service</a> and <a href="privacy.html" target="_blank">Privacy Policy</a>.</label>
+                    </div>
+                    <button type="submit" class="cta-button form-button">Sign Up (Demo)</button>
+                    <p class="form-switch">Already have an account? <a href="#login" onclick="toggleForms(); return false;">Login</a></p>
+                </form>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+     <footer>
+        <div class="container">
+            <div class="social-media">
+                <a href="#" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" target="_blank" title="YouTube"><i class="fab fa-youtube"></i></a>
+                <a href="#" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" target="_blank" title="Telegram"><i class="fab fa-telegram"></i></a>
+            </div>
+            <p>© <span id="current-year"></span> PragZo EduTech. All Rights Reserved.</p>
+            <p>
+                <a href="about.html">About Us</a> |
+                <a href="contact.html">Contact</a> |
+                <a href="privacy.html">Privacy Policy</a> |
+                <a href="terms.html">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+
+     <!-- Modal Download Forms (Include modals on all pages for consistency if triggers are present) -->
+    <!-- [COPY THE ENTIRE MODAL BLOCK FROM index.html and PASTE HERE] -->
+
+    <!-- Link to your JavaScript file -->
+    <script src="js/script.js"></script>
+    <!-- Add simple toggle JS for login/signup (keep this specific to login.html) -->
+    <script>
+        function toggleForms() {
+            const loginForm = document.getElementById('login-form');
+            const signupForm = document.getElementById('signup-form');
+            loginForm.classList.toggle('active');
+            signupForm.classList.toggle('active');
+             // Update hash without page jump
+            if (signupForm.classList.contains('active')) {
+                history.pushState(null, null, '#signup');
+            } else {
+                 history.pushState(null, null, '#login');
+            }
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+             const loginForm = document.getElementById('login-form');
+             const signupForm = document.getElementById('signup-form');
+             if(window.location.hash === '#signup') {
+                  loginForm.classList.remove('active');
+                  signupForm.classList.add('active');
+             } else {
+                 if (!loginForm.classList.contains('active') && !signupForm.classList.contains('active')) {
+                     loginForm.classList.add('active');
+                 } else if (loginForm.classList.contains('active') && signupForm.classList.contains('active')){
+                     signupForm.classList.remove('active');
+                 }
+             }
+        });
+    </script>
+
+</body>
+</html>
