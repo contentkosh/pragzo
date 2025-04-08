@@ -391,10 +391,13 @@ document.addEventListener('DOMContentLoaded', function() {
              subjectName = 'CUET Resources Overview';
              subjectKey = null;
          }
-
+         //PYQ
          const linkSubject = document.getElementById('subject-link');
          if(linkSubject) linkSubject.href = `/pyq/${subjectName}.pdf`;
 
+         //Syllabus
+         const linkSyllabus = document.getElementById('syllabus-link');
+         if(linkSyllabus) linkSyllabus.href = `/syllabus/${subjectName}.pdf`;
 
          document.title = `${subjectName} Resources - PragZo`;
          const titleElement = document.getElementById('subject-title');
