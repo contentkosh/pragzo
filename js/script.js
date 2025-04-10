@@ -392,8 +392,8 @@ document.addEventListener('DOMContentLoaded', function() {
              subjectKey = null;
          }
          //PYQ
-         const linkSubject = document.getElementById('subject-link');
-         if(linkSubject) linkSubject.href = `/pyq/${subjectName}.pdf`;
+         const linkPyq = document.getElementById('pqy-link');
+         if(linkPyq) linkPyq.href = `/pyq/2024/${subjectName}-CUET-UG-2024.pdf`;
 
          //Syllabus
          const linkSyllabus = document.getElementById('syllabus-link');
