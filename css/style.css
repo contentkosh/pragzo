@@ -7,6 +7,8 @@
 
 /* Variables */
 :root {
+    --first-color: #000000; 
+    --second-color: #6803ff; 
     --primary-color: #4A90E2; /* Blue */
     --secondary-color: #50E3C2; /* Teal */
     --accent-color: #F5A623; /* Orange for emphasis */
@@ -93,11 +95,11 @@ header .container {
 header .logo {
     font-size: 2rem;
     font-weight: bold;
-    color: var(--primary-color);
+    color: var(--first-color);
     font-family: var(--heading-font);
 }
 header .logo span {
-    color: var(--secondary-color);
+    color: var(--second-color);
 }
 
 header nav ul {
