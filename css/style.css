@@ -1219,3 +1219,158 @@ a.ca-download-button i {
     margin-bottom: 0; /* Reset default h2 margin */
     text-align: center; /* Ensure text center within inline-block */
 }
+
+.form-switch, .forgot-password { /* Completed the cut-off rule */
+    /* Add any specific styles for these elements here if needed */
+}
+
+/* --- New additions for Mobile Navigation --- */
+
+/* Initially hide the toggle button for desktop */
+.mobile-nav-toggle {
+    display: none;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    padding: 0.5rem;
+    position: absolute; /* Position it relative to the container */
+    right: 25px; /* Adjust as needed to align with container padding */
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 9999; /* Ensure it's above other elements */
+    font-size: 2rem; /* Larger icon size */
+    color: var(--primary-color);
+}
+
+.mobile-nav-toggle::before {
+    content: '\f0c9'; /* Font Awesome bars icon */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+}
+
+/* Screen reader only class for accessibility */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Media query for screens up to 768px wide (typical tablet/mobile breakpoint) */
+@media (max-width: 768px) {
+    /* Show the mobile nav toggle button */
+    .mobile-nav-toggle {
+        display: block;
+    }
+
+    /* Style the main navigation for mobile */
+    header nav {
+        position: fixed; /* Fixed position so it covers the screen */
+        top: 0;
+        right: 0;
+        width: 70%; /* Width of the mobile menu panel */
+        height: 100vh; /* Full viewport height */
+        background: var(--white);
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        transform: translateX(100%); /* Initially off-screen to the right */
+        transition: transform 0.3s ease-out; /* Smooth slide-in/out transition */
+        padding-top: 5rem; /* Space for header content */
+        z-index: 999;
+        overflow-y: auto; /* Enable scrolling for long menus */
+    }
+
+    /* When the 'nav-open' class is added by JavaScript */
+    header nav.nav-open {
+        transform: translateX(0%); /* Slide into view */
+    }
+
+    /* Style the main menu items for mobile */
+    header nav ul {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the left */
+        padding: 0 25px;
+        margin-top: 1rem;
+    }
+
+    header nav ul li {
+        margin: 0; /* Reset desktop margin */
+        width: 100%;
+        border-bottom: 1px solid #eee; /* Separator for menu items */
+    }
+    header nav ul li:last-child {
+        border-bottom: none; /* No border for the last item */
+    }
+
+    header nav ul li a {
+        padding: 15px 0; /* More vertical padding for easier tapping */
+        width: 100%;
+        text-align: left;
+    }
+
+    /* Adjust dropdowns for mobile */
+    .dropdown-menu {
+        position: static; /* Remove absolute positioning */
+        display: block; /* Always visible on mobile if parent is open */
+        width: 100%;
+        background: transparent; /* No background for nested list */
+        box-shadow: none; /* No shadow */
+        padding: 0;
+        border-radius: 0;
+        margin-top: 0;
+        overflow: hidden; /* Hide until JS toggles visibility */
+        max-height: 0; /* Used for collapse/expand effect */
+        transition: max-height 0.3s ease-out;
+    }
+
+    /* When parent dropdown is 'active' (toggled by JS) */
+    li.dropdown.active .dropdown-menu {
+        max-height: 500px; /* Expand to show content. Adjust if your menu is longer. */
+    }
+
+    .dropdown-menu li {
+        border-bottom: none; /* No extra border for sub-items */
+    }
+    .dropdown-menu li a {
+        padding-left: 35px; /* Indent sub-items */
+        font-size: 0.95rem;
+    }
+
+    /* Add chevron icon to dropdown parents and rotate on open */
+    li.dropdown > a::after {
+        content: '\f078'; /* Chevron down icon */
+        font-family: 'Font Awesome 6 Free';
+        font-weight: 900;
+        font-size: 0.7em;
+        margin-left: 5px;
+        float: right; /* Align icon to the right */
+        transition: transform 0.3s ease;
+    }
+
+    li.dropdown.active > a::after {
+        transform: rotate(180deg); /* Rotate chevron up when active */
+    }
+
+    /* Overlay for when mobile menu is open to darken background */
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+        z-index: 998; /* Below the menu, above page content */
+        display: none; /* Hidden by default */
+        transition: opacity 0.3s ease-out;
+        opacity: 0;
+    }
+    /* When body has 'modal-open' class (added by JS), show overlay */
+    body.modal-open .overlay {
+        display: block;
+        opacity: 1;
+    }
+}

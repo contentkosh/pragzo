@@ -23,18 +23,23 @@
 </head>
 <body>
 
-    <!-- Header (Copied from index.html, ensure nav link 'active' status is correct) -->
-     <header>
+    <!-- Header -->
+    <header>
         <div class="container">
-            <a href="index.html#hero" class="logo">Prag<span>Zo</span></a>
-            <nav>
+            <a href="index.html#hero" class="logo">
+                <img src="images/logo1.png" alt="PragZo Logo" style="height: 50px; vertical-align: middle;">
+                Prag<span>Zo</span></a>
+            </a>
+            <button class="mobile-nav-toggle" aria-controls="primary-navigation" aria-expanded="false">
+                <span class="sr-only">Menu</span>
+            </button>
+            <nav id="primary-navigation">
                 <ul>
-                    <li><a href="index.html#hero" class="nav-link">Home</a></li>
+                    <li><a href="index.html#hero" class="nav-link active">Home</a></li>
                     <li><a href="index.html#cuet-features" class="nav-link">Resources</a></li>
                     <li class="dropdown">
-                        <!-- Link now points to this page, still acts as hover trigger -->
-                        <a href="subjects.html" class="nav-link active" aria-haspopup="true" aria-expanded="false">Subjects</a>
-                         <ul class="dropdown-menu">
+                         <a href="subjects.html" class="nav-link" aria-haspopup="true" aria-expanded="false">Subjects
+                        <ul class="dropdown-menu">
                             <li><a href="subject-template.html?subject=English">English</a></li>
                             <li><a href="subject-template.html?subject=Hindi">Hindi</a></li>
                             <li><hr></li>
@@ -58,6 +63,7 @@
                     <li><a href="current-affairs.html" class="nav-link">Current Affairs</a></li>
                     <li><a href="prep-insights.html" class="nav-link">Prep Insights</a></li>
                     <li><a href="about.html" class="nav-link">About</a></li>
+
                 </ul>
             </nav>
         </div>

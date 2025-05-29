@@ -497,3 +497,82 @@ document.addEventListener('DOMContentLoaded', function() {
     } // End subject page specific logic
 
 }); // End DOMContentLoaded
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Update current year in footer
+    const currentYearSpan = document.getElementById('current-year');
+    if (currentYearSpan) {
+        currentYearSpan.textContent = new Date().getFullYear();
+    }
+
+    // Mobile Navigation Toggle
+    const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+    const primaryNavigation = document.getElementById('primary-navigation');
+    const body = document.body;
+
+    // Create and append overlay
+    const overlay = document.createElement('div');
+    overlay.classList.add('overlay');
+    document.body.appendChild(overlay);
+
+    function toggleMobileMenu() {
+        const isOpen = primaryNavigation.classList.contains('nav-open');
+        primaryNavigation.classList.toggle('nav-open');
+        mobileNavToggle.setAttribute('aria-expanded', !isOpen);
+        body.classList.toggle('modal-open'); // To prevent body scroll and show overlay
+    }
+
+    if (mobileNavToggle && primaryNavigation) {
+        mobileNavToggle.addEventListener('click', toggleMobileMenu);
+        overlay.addEventListener('click', toggleMobileMenu); // Close menu when overlay is clicked
+    }
+
+    // Handle mobile dropdowns
+    const dropdowns = document.querySelectorAll('li.dropdown > a');
+
+    dropdowns.forEach(dropdownLink => {
+        // Prevent default navigation for dropdowns on mobile
+        dropdownLink.addEventListener('click', function(event) {
+            // Only toggle on mobile screens. Check current CSS breakpoint.
+            // Using window.innerWidth is a simple way; for more robust check,
+            // matchMedia or checking if mobileNavToggle is displayed would be better.
+            if (window.innerWidth <= 768) {
+                event.preventDefault(); // Stop navigation
+                const parentLi = this.closest('li.dropdown');
+                if (parentLi) {
+                    parentLi.classList.toggle('active');
+                }
+            }
+            // For desktop, the default hover CSS handles it.
+        });
+    });
+
+    // Close mobile menu when a nav link (not a dropdown parent) is clicked
+    const navLinks = document.querySelectorAll('#primary-navigation ul li a:not(.dropdown > a)');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (primaryNavigation.classList.contains('nav-open') && window.innerWidth <= 768) {
+                toggleMobileMenu(); // Close menu
+            }
+        });
+    });
+
+    // Close mobile menu on resize if wider than mobile breakpoint
+    window.addEventListener('resize', function() {
+        if (window.innerWidth > 768 && primaryNavigation.classList.contains('nav-open')) {
+            toggleMobileMenu(); // Force close if resized to desktop view
+        }
+    });
+
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const includes = document.querySelectorAll('[data-include]');
+  includes.forEach(el => {
+    const file = el.getAttribute("data-include");
+    fetch(file)
+      .then(response => response.text())
+      .then(html => el.innerHTML = html)
+      .catch(err => console.warn("Include error:", err));
+  });
+});
